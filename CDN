@@ -1,0 +1,98 @@
+what is CloudFront
+
+Amazon CloudFront is a **Content Delivery Network (CDN)** service from Amazon Web Services.
+
+It helps websites, APIs, videos, and applications load faster by distributing content across a global network of servers called **edge locations**.
+
+### Simple explanation
+
+Instead of every user connecting directly to your main server:
+
+* A user in Japan gets content from a nearby CloudFront edge server in Asia.
+* A user in Europe gets it from a nearby European edge server.
+
+This reduces:
+
+* latency (faster loading)
+* bandwidth usage
+* load on your origin server
+
+---
+
+### What CloudFront is commonly used for
+
+* Website acceleration
+* Streaming video/content delivery
+* Serving images, CSS, JS files
+* API acceleration
+* DDoS protection and security
+* Caching static and dynamic content
+
+---
+
+### How it works
+
+1. Your files/app are hosted somewhere:
+
+   * S3 bucket
+   * EC2 server
+   * Load balancer
+   * External server
+
+2. CloudFront caches copies at edge locations worldwide.
+
+3. Users receive content from the nearest edge location.
+
+---
+
+### Example
+
+Without CloudFront:
+
+```text
+User → Your server in US → Response
+```
+
+With CloudFront:
+
+```text
+User → Nearby CloudFront edge server → Response
+```
+
+---
+
+### Key features
+
+* Global CDN network
+* HTTPS/SSL support
+* Integration with AWS services
+* Built-in caching
+* Protection using AWS Shield/WAF
+* Low latency delivery
+* Signed URLs/cookies for private content
+
+---
+
+### Common AWS architecture
+
+```text
+User
+  ↓
+CloudFront
+  ↓
+S3 / EC2 / Load Balancer / API Gateway
+```
+
+---
+
+### Real-world analogy
+
+Think of CloudFront like a chain of local warehouses:
+
+* Instead of shipping every order from one central warehouse,
+* copies are stored closer to customers,
+* so delivery is much faster.
+
+---
+
+Official docs: [Amazon CloudFront Documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html?utm_source=chatgpt.com)
